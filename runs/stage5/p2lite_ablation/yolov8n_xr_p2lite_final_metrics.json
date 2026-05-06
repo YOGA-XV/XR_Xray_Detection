@@ -1,0 +1,16 @@
+{
+  "source": "G:\\XR_Xray_Detection\\runs\\train_stage5\\yolov8n_xr_p2lite\\results.csv",
+  "best_metric": "metrics/mAP50-95(B)",
+  "best": {
+    "epoch": 212,
+    "metrics/precision(B)": 0.95104,
+    "metrics/recall(B)": 0.86753,
+    "metrics/F1(B)": 0.90487,
+    "metrics/mAP50(B)": 0.92834,
+    "metrics/mAP75(B)": 0.84289,
+    "metrics/mAP50-95(B)": 0.77717,
+    "val/box_loss": 0.6707,
+    "val/cls_loss": 0.46113,
+    "val/dfl_loss": 1.12486
+  }
+}

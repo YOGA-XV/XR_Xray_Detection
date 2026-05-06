@@ -1,0 +1,28 @@
+{
+  "source": "G:\\XR_Xray_Detection\\runs\\train_stage4\\yolov8n_xr_ema\\results.csv",
+  "best_metric": "metrics/mAP50-95(B)",
+  "last": {
+    "epoch": 300,
+    "metrics/precision(B)": 0.9425,
+    "metrics/recall(B)": 0.88173,
+    "metrics/F1(B)": 0.90889,
+    "metrics/mAP50(B)": 0.9286,
+    "metrics/mAP75(B)": 0.84883,
+    "metrics/mAP50-95(B)": 0.78423,
+    "val/box_loss": 0.64268,
+    "val/cls_loss": 0.41956,
+    "val/dfl_loss": 0.988
+  },
+  "best": {
+    "epoch": 217,
+    "metrics/precision(B)": 0.94532,
+    "metrics/recall(B)": 0.8777,
+    "metrics/F1(B)": 0.90773,
+    "metrics/mAP50(B)": 0.93141,
+    "metrics/mAP75(B)": 0.85431,
+    "metrics/mAP50-95(B)": 0.78883,
+    "val/box_loss": 0.63471,
+    "val/cls_loss": 0.42107,
+    "val/dfl_loss": 0.97858
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "source": "runs\\train_stage2\\yolov8n_pcn\\results.csv",
+  "best_metric": "metrics/mAP50-95(B)",
+  "last": {
+    "epoch": 279,
+    "metrics/precision(B)": 0.95508,
+    "metrics/recall(B)": 0.8676,
+    "metrics/F1(B)": 0.90673,
+    "metrics/mAP50(B)": 0.92816,
+    "metrics/mAP75(B)": 0.85197,
+    "metrics/mAP50-95(B)": 0.78974,
+    "val/box_loss": 0.63424,
+    "val/cls_loss": 0.42706,
+    "val/dfl_loss": 0.97439
+  },
+  "best": {
+    "epoch": 179,
+    "metrics/precision(B)": 0.93847,
+    "metrics/recall(B)": 0.88684,
+    "metrics/F1(B)": 0.91006,
+    "metrics/mAP50(B)": 0.93595,
+    "metrics/mAP75(B)": 0.85067,
+    "metrics/mAP50-95(B)": 0.79202,
+    "val/box_loss": 0.63139,
+    "val/cls_loss": 0.42338,
+    "val/dfl_loss": 0.96884
+  }
+}

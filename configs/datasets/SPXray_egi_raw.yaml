@@ -1,0 +1,9 @@
+path: G:/XR_Xray_Detection/datasets/SPXray
+train: images/train
+val: images/val
+test: images/test
+nc: 12
+channels: 4
+xr_pcn: false
+xr_egi: true
+names: ['Baton', 'Plier', 'Hammer', 'Powerbank', 'Scissors', 'Wrench', 'Gun', 'Bullet', 'Sprayer', 'HandCuffs', 'Knife', 'Lighter']

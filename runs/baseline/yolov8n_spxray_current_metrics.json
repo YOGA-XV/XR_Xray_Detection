@@ -1,0 +1,10 @@
+{
+  "status": "invalidated",
+  "reason": "This file was generated from an external training directory before the project-local-only rule was clarified. It is not a valid Stage 1 baseline result.",
+  "use_in_reports": false,
+  "replacement": {
+    "results_csv": "runs/train_spxray/yolov8n_spxray/results.csv",
+    "summary_output": "runs/baseline/yolov8n_spxray_final_metrics.json",
+    "note": "Wait until the 300-epoch training result is moved into this project, then regenerate the final baseline metrics from the project-local results.csv."
+  }
+}

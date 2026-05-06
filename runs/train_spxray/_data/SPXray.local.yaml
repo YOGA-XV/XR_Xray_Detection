@@ -1,0 +1,18 @@
+path: G:\YOLO\YOLOv8-Only\datasets\SPXray
+train: ./images/train
+val: ./images/val
+test: ./images/test
+nc: 12
+names:
+- Baton
+- Plier
+- Hammer
+- Powerbank
+- Scissors
+- Wrench
+- Gun
+- Bullet
+- Sprayer
+- HandCuffs
+- Knife
+- Lighter

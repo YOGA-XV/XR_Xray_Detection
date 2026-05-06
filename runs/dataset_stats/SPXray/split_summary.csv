@@ -1,0 +1,4 @@
+split,image_count,label_count,missing_label_count,instance_count,small,medium,large,thin_count
+train,10982,10982,0,14413,930,4312,9171,2363
+val,1373,1373,0,1794,107,558,1129,283
+test,1373,1373,0,1824,118,553,1153,277

@@ -1,0 +1,28 @@
+{
+  "source": "runs\\train_spxray\\yolov8l_spxray\\results.csv",
+  "best_metric": "metrics/mAP50-95(B)",
+  "last": {
+    "epoch": 235,
+    "metrics/precision(B)": 0.96314,
+    "metrics/recall(B)": 0.925,
+    "metrics/F1(B)": 0.942868,
+    "metrics/mAP50(B)": 0.95137,
+    "metrics/mAP75(B)": 0.89489,
+    "metrics/mAP50-95(B)": 0.8338,
+    "val/box_loss": 0.5466,
+    "val/cls_loss": 0.30374,
+    "val/dfl_loss": 1.05245
+  },
+  "best": {
+    "epoch": 185,
+    "metrics/precision(B)": 0.95678,
+    "metrics/recall(B)": 0.9271,
+    "metrics/F1(B)": 0.940964,
+    "metrics/mAP50(B)": 0.95828,
+    "metrics/mAP75(B)": 0.897944,
+    "metrics/mAP50-95(B)": 0.83876,
+    "val/box_loss": 0.53847,
+    "val/cls_loss": 0.29897,
+    "val/dfl_loss": 1.04186
+  }
+}
