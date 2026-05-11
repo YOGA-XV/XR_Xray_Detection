@@ -1,0 +1,2 @@
+﻿"model","weights","layers","params","params_m","gradients","gflops","preprocess_ms","inference_ms","postprocess_ms","total_ms","fps_inference_only","fps_end_to_end","precision","recall","map50","map50_95"
+"A2-EGI","G:\XR_Xray_Detection\runs\train_stage2\yolov8n_egi_raw\weights\best.pt","130","3013332","3.01333","0","8.12520","0.65015","0.88018","1.13655","2.66688","1136.13551","374.97046","0.9467004068496632","0.8824855452242214","0.9347698808562526","0.7941419612491089"

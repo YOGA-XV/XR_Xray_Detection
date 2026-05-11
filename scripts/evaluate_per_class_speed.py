@@ -12,10 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from ultralytics import YOLO
+from ultralytics.utils.torch_utils import get_flops_with_torch_profiler
 
 
 DEFAULT_MODELS = {
-    "A3_pcn_egi": Path("runs/train_stage2/yolov8n_pcn_egi/weights/best.pt"),
+    "XR-Nano": Path("runs/train_stage2/yolov8n_pcn_egi/weights/best.pt"),
     "XR-Lite": Path("runs/train_stage4/yolov8n_xr_lite/weights/best.pt"),
     "P2-Lite": Path("runs/train_stage5/yolov8n_xr_p2lite/weights/best.pt"),
     "XR-Plus": Path("runs/train_stage5/yolov8n_xr_plus/weights/best.pt"),
@@ -30,6 +31,12 @@ def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> 
         writer.writerows(rows)
 
 
+def resolve_gflops(*, model: Any, imgsz: int, info_flops: float) -> float:
+    if info_flops > 0:
+        return round(float(info_flops), 5)
+    return round(float(get_flops_with_torch_profiler(model, imgsz=imgsz)), 5)
+
+
 def evaluate_model(
     *,
     name: str,
@@ -40,24 +47,28 @@ def evaluate_model(
     device: str,
     workers: int,
     output_dir: Path,
+    warmup_val_runs: int,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     model = YOLO(str(weights))
     layers, params, gradients, flops = model.info(imgsz=imgsz)
+    gflops = resolve_gflops(model=model.model, imgsz=imgsz, info_flops=float(flops))
     run_name = re.sub(r"[^A-Za-z0-9_.-]+", "_", name)
-    metrics = model.val(
-        data=str(data),
-        imgsz=imgsz,
-        batch=batch,
-        device=device,
-        workers=workers,
-        plots=False,
-        verbose=False,
-        split="val",
-        project=str(output_dir / "_val_runs"),
-        name=run_name,
-        exist_ok=True,
-        save_json=False,
-    )
+    val_kwargs = {
+        "data": str(data),
+        "imgsz": imgsz,
+        "batch": batch,
+        "device": device,
+        "workers": workers,
+        "plots": False,
+        "verbose": False,
+        "split": "val",
+        "project": str(output_dir / "_val_runs"),
+        "exist_ok": True,
+        "save_json": False,
+    }
+    for warmup_i in range(warmup_val_runs):
+        model.val(name=f"{run_name}_warmup{warmup_i + 1}", **val_kwargs)
+    metrics = model.val(name=run_name, **val_kwargs)
 
     speed = metrics.speed
     preprocess_ms = float(speed.get("preprocess", 0.0))
@@ -72,7 +83,7 @@ def evaluate_model(
         "params": params,
         "params_m": round(params / 1e6, 5),
         "gradients": gradients,
-        "gflops": round(float(flops), 5),
+        "gflops": gflops,
         "preprocess_ms": round(preprocess_ms, 5),
         "inference_ms": round(inference_ms, 5),
         "postprocess_ms": round(postprocess_ms, 5),
@@ -122,11 +133,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--device", default="0")
     parser.add_argument("--workers", type=int, default=0)
     parser.add_argument(
+        "--warmup-val-runs",
+        type=int,
+        default=1,
+        help="Full validation warm-up runs per model before recording speed. Use 0 to disable.",
+    )
+    parser.add_argument(
         "--model",
         action="append",
         nargs=2,
         metavar=("NAME", "WEIGHTS"),
-        help="Optional model override. Can be passed multiple times. Defaults to A3, XR-Lite, P2-Lite, XR-Plus.",
+        help="Optional model override. Can be passed multiple times. Defaults to XR-Nano, XR-Lite, P2-Lite, XR-Plus.",
     )
     return parser.parse_args()
 
@@ -152,6 +169,7 @@ def main() -> None:
             device=args.device,
             workers=args.workers,
             output_dir=args.output_dir,
+            warmup_val_runs=args.warmup_val_runs,
         )
         summary_rows.append(summary)
         per_class_rows.extend(class_rows)

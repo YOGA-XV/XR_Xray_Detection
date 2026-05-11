@@ -1,0 +1,3 @@
+﻿"model","weights","layers","params","params_m","gradients","gflops","preprocess_ms","inference_ms","postprocess_ms","total_ms","fps_inference_only","fps_end_to_end","precision","recall","map50","map50_95"
+"YOLOv8n","G:\XR_Xray_Detection\runs\train_spxray\yolov8n_spxray\weights\best.pt","130","3013188","3.01319","0","8.09571","0.41943","0.82515","1.01909","2.26368","1211.90092","441.75918","0.944750276149052","0.8724966358819463","0.928835786765715","0.7879018614250038"
+"YOLOv8s","G:\XR_Xray_Detection\runs\train_spxray\yolov8s_spxray\weights\best.pt","130","11140244","11.14024","0","28.45862","0.43208","1.80284","1.06212","3.29704","554.67901","303.30208","0.9457974764370084","0.9039865347481922","0.9452721375963055","0.8099777825876124"

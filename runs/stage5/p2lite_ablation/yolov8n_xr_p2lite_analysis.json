@@ -1,6 +1,6 @@
-{
+﻿{
   "experiment": "S5_p2lite",
-  "role": "A3 + P2-Lite auxiliary ablation",
+  "role": "XR-Nano + P2-Lite auxiliary ablation",
   "summary": {
     "experiment": "S5_p2lite",
     "best_epoch": 212,
@@ -14,12 +14,12 @@
     "recall_small": 0.9065420560747663,
     "ap_thin": 0.8455196014647534,
     "recall_thin": 0.9363957597173145,
-    "delta_map50_95_vs_A3": -0.01471,
-    "delta_ap_small_vs_A3": 0.002839207960667278,
-    "delta_ap_thin_vs_A3": -0.018562720996298188
+    "delta_map50_95_vs_XR_Nano": -0.01471,
+    "delta_ap_small_vs_XR_Nano": 0.002839207960667278,
+    "delta_ap_thin_vs_XR_Nano": -0.018562720996298188
   },
   "a3_reference": {
-    "experiment": "A3_pcn_egi",
+    "experiment": "XR-Nano",
     "best_epoch": 195.0,
     "precision": 0.93687,
     "recall": 0.88947,

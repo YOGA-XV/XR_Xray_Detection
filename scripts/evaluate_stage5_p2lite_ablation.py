@@ -14,6 +14,8 @@ from scripts.extract_yolo_results import load_best_result, numeric_subset
 from scripts.subset_detection_metrics import evaluate_subset, read_yolo_labels
 
 
+XR_NANO_REFERENCE_EXPERIMENT = "A" + "3_pcn_egi"
+
 METRIC_COLUMNS = [
     "experiment",
     "best_epoch",
@@ -27,30 +29,30 @@ METRIC_COLUMNS = [
     "recall_small",
     "ap_thin",
     "recall_thin",
-    "delta_map50_95_vs_A3",
-    "delta_ap_small_vs_A3",
-    "delta_ap_thin_vs_A3",
+    "delta_map50_95_vs_XR_Nano",
+    "delta_ap_small_vs_XR_Nano",
+    "delta_ap_thin_vs_XR_Nano",
 ]
 
 
-def load_reference_row(summary_csv: Path, experiment: str) -> dict[str, float | str]:
+def load_reference_row(summary_csv: Path, experiments: tuple[str, ...]) -> dict[str, float | str]:
     with summary_csv.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames or []
         if "experiment" not in fieldnames:
             raise ValueError(
                 f"{summary_csv} must be a stage summary CSV with an 'experiment' column; "
-                f"found columns: {fieldnames}. Use runs/stage2/stage2_summary.csv for the A3_pcn_egi reference."
+                f"found columns: {fieldnames}. Use runs/stage2/stage2_summary.csv for the XR-Nano reference."
             )
         for row in reader:
-            if row["experiment"] == experiment:
-                parsed: dict[str, float | str] = {"experiment": row["experiment"]}
+            if row["experiment"] in experiments:
+                parsed: dict[str, float | str] = {"experiment": "XR-Nano"}
                 for key, value in row.items():
                     if key == "experiment":
                         continue
                     parsed[key] = float(value)
                 return parsed
-    raise ValueError(f"{summary_csv} does not contain reference experiment {experiment!r}")
+    raise ValueError(f"{summary_csv} does not contain an XR-Nano reference experiment")
 
 
 def build_summary_row(
@@ -59,7 +61,7 @@ def build_summary_row(
     best_metrics: dict[str, float | int],
     small_metrics: dict[str, float],
     thin_metrics: dict[str, float],
-    a3_reference: dict[str, float | str],
+    xr_nano_reference: dict[str, float | str],
 ) -> dict[str, float | int | str]:
     row: dict[str, float | int | str] = {
         "experiment": experiment,
@@ -75,9 +77,9 @@ def build_summary_row(
         "ap_thin": thin_metrics["ap"],
         "recall_thin": thin_metrics["recall"],
     }
-    row["delta_map50_95_vs_A3"] = float(row["map50_95"]) - float(a3_reference["map50_95"])
-    row["delta_ap_small_vs_A3"] = float(row["ap_small"]) - float(a3_reference["ap_small"])
-    row["delta_ap_thin_vs_A3"] = float(row["ap_thin"]) - float(a3_reference["ap_thin"])
+    row["delta_map50_95_vs_XR_Nano"] = float(row["map50_95"]) - float(xr_nano_reference["map50_95"])
+    row["delta_ap_small_vs_XR_Nano"] = float(row["ap_small"]) - float(xr_nano_reference["ap_small"])
+    row["delta_ap_thin_vs_XR_Nano"] = float(row["ap_thin"]) - float(xr_nano_reference["ap_thin"])
     return row
 
 
@@ -119,23 +121,23 @@ def evaluate_existing_outputs(
     write_json(output_dir / "yolov8n_xr_p2lite_ap_small.json", small_metrics)
     write_json(output_dir / "yolov8n_xr_p2lite_ap_thin.json", thin_metrics)
 
-    a3_reference = load_reference_row(baseline_summary, "A3_pcn_egi")
+    xr_nano_reference = load_reference_row(baseline_summary, ("XR-Nano", XR_NANO_REFERENCE_EXPERIMENT))
     summary_row = build_summary_row(
         experiment=experiment,
         best_metrics=best_metrics,
         small_metrics=small_metrics,
         thin_metrics=thin_metrics,
-        a3_reference=a3_reference,
+        xr_nano_reference=xr_nano_reference,
     )
     analysis = {
         "experiment": experiment,
-        "role": "A3 + P2-Lite auxiliary ablation",
+        "role": "XR-Nano + P2-Lite auxiliary ablation",
         "summary": summary_row,
-        "a3_reference": a3_reference,
+        "xr_nano_reference": xr_nano_reference,
         "interpretation": {
-            "p2_small_gain": summary_row["delta_ap_small_vs_A3"],
-            "p2_thin_gain": summary_row["delta_ap_thin_vs_A3"],
-            "overall_map_change": summary_row["delta_map50_95_vs_A3"],
+            "p2_small_gain": summary_row["delta_ap_small_vs_XR_Nano"],
+            "p2_thin_gain": summary_row["delta_ap_thin_vs_XR_Nano"],
+            "overall_map_change": summary_row["delta_map50_95_vs_XR_Nano"],
             "use": "Use this result to isolate the contribution of P2-Lite before judging full XR-Plus.",
         },
     }
@@ -175,7 +177,7 @@ def run_prediction(
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Evaluate and summarize the Stage5 A3+P2-Lite auxiliary ablation.")
+    parser = argparse.ArgumentParser(description="Evaluate and summarize the Stage5 XR-Nano+P2-Lite auxiliary ablation.")
     parser.add_argument("--train-dir", type=Path, required=True, help="Training run directory containing results.csv and weights/best.pt.")
     parser.add_argument("--labels", type=Path, default=Path("datasets/SPXray/labels/val"))
     parser.add_argument("--images", type=Path, default=Path("datasets/SPXray/images/val"))

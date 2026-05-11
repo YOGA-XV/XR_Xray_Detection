@@ -1,0 +1,121 @@
+﻿{
+  "claims": {
+    "overall_map50_95_leader": "yolov8l",
+    "n_family_map50_95_leader": "XR-Nano",
+    "n_family_precision_leader": "XR-Lite",
+    "xr_family_map50_95_leader": "XR-Lite",
+    "xr_family_fps_leader": "XR-Lite",
+    "xr_family_precision_leader": "XR-Lite"
+  },
+  "warnings": [
+    "not the overall mAP50:95 leader",
+    "not the YOLOv8n-family mAP50:95 leader"
+  ],
+  "deltas": {
+    "xr_lite_minus_a3_map50_95": -0.007670613126166792,
+    "xr_lite_minus_a3_precision": 0.011401803207442884,
+    "xr_lite_minus_a3_recall": -0.010283383142846159,
+    "xr_lite_minus_a3_fps_end_to_end": -32.16708999999997,
+    "xr_lite_minus_a3_params_m": 0.4252800000000003,
+    "xr_lite_minus_a3_gflops": 0.4145700000000012
+  },
+  "recommended_claim": "XR-Lite is the strongest XR structural variant in the current Stage 5 comparison when judged by mAP50:95, end-to-end FPS, and precision within the XR family. It should not be reported as the global accuracy leader.",
+  "rows": [
+    {
+      "model": "yolov8n",
+      "source": "G:\\XR_Xray_Detection\\runs\\baseline\\yolov8_baseline_summary.csv",
+      "family": "n_family",
+      "map50_95": 0.78888,
+      "map50": 0.92965,
+      "precision": 0.95032,
+      "recall": 0.86876,
+      "fps_end_to_end": null,
+      "params_m": null,
+      "gflops": null
+    },
+    {
+      "model": "yolov8s",
+      "source": "G:\\XR_Xray_Detection\\runs\\baseline\\yolov8_baseline_summary.csv",
+      "family": "baseline",
+      "map50_95": 0.81133,
+      "map50": 0.94645,
+      "precision": 0.94446,
+      "recall": 0.90845,
+      "fps_end_to_end": null,
+      "params_m": null,
+      "gflops": null
+    },
+    {
+      "model": "yolov8m",
+      "source": "G:\\XR_Xray_Detection\\runs\\baseline\\yolov8_baseline_summary.csv",
+      "family": "baseline",
+      "map50_95": 0.8313,
+      "map50": 0.95017,
+      "precision": 0.93686,
+      "recall": 0.92612,
+      "fps_end_to_end": null,
+      "params_m": null,
+      "gflops": null
+    },
+    {
+      "model": "yolov8l",
+      "source": "G:\\XR_Xray_Detection\\runs\\baseline\\yolov8_baseline_summary.csv",
+      "family": "baseline",
+      "map50_95": 0.83876,
+      "map50": 0.95828,
+      "precision": 0.95678,
+      "recall": 0.9271,
+      "fps_end_to_end": null,
+      "params_m": null,
+      "gflops": null
+    },
+    {
+      "model": "XR-Nano",
+      "source": "G:\\XR_Xray_Detection\\runs\\stage5\\per_class_speed_warm\\model_speed_complexity.csv",
+      "family": "n_family",
+      "map50_95": 0.7923163615702858,
+      "map50": 0.9385571386076318,
+      "precision": 0.9403732353834573,
+      "recall": 0.887819911655901,
+      "fps_end_to_end": 482.50991,
+      "params_m": 3.01333,
+      "gflops": 8.23547
+    },
+    {
+      "model": "XR-Lite",
+      "source": "G:\\XR_Xray_Detection\\runs\\stage5\\per_class_speed_warm\\model_speed_complexity.csv",
+      "family": "xr_family",
+      "map50_95": 0.784645748444119,
+      "map50": 0.9297326981402517,
+      "precision": 0.9517750385909002,
+      "recall": 0.8775365285130549,
+      "fps_end_to_end": 450.34282,
+      "params_m": 3.43861,
+      "gflops": 8.65004
+    },
+    {
+      "model": "P2-Lite",
+      "source": "G:\\XR_Xray_Detection\\runs\\stage5\\per_class_speed_warm\\model_speed_complexity.csv",
+      "family": "xr_family",
+      "map50_95": 0.7765332650527318,
+      "map50": 0.9279420278873891,
+      "precision": 0.9510095204496114,
+      "recall": 0.8668083900793752,
+      "fps_end_to_end": 401.5624,
+      "params_m": 2.88051,
+      "gflops": 11.50725
+    },
+    {
+      "model": "XR-Plus",
+      "source": "G:\\XR_Xray_Detection\\runs\\stage5\\per_class_speed_warm\\model_speed_complexity.csv",
+      "family": "xr_family",
+      "map50_95": 0.7783432295331207,
+      "map50": 0.9309719545822958,
+      "precision": 0.9412056359090406,
+      "recall": 0.8790658503032339,
+      "fps_end_to_end": 370.49555,
+      "params_m": 3.30579,
+      "gflops": 11.92182
+    }
+  ]
+}

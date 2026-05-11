@@ -12,6 +12,7 @@ from typing import Iterable
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"}
 SCALE_BINS = ("small", "medium", "large")
+OVERLAP_THRESHOLDS = (0.3, 0.5)
 
 
 @dataclass(frozen=True)
@@ -35,6 +36,42 @@ def is_thin_box(width: float, height: float) -> bool:
     if width <= 0 or height <= 0:
         return False
     return max(width, height) / min(width, height) > 3.0
+
+
+def xyxy(label: tuple[int, float, float, float, float]) -> tuple[float, float, float, float]:
+    _cls, xc, yc, width, height = label
+    return (
+        xc - width / 2,
+        yc - height / 2,
+        xc + width / 2,
+        yc + height / 2,
+    )
+
+
+def intersection_over_target_area(
+    target: tuple[int, float, float, float, float],
+    other: tuple[int, float, float, float, float],
+) -> float:
+    tx1, ty1, tx2, ty2 = xyxy(target)
+    ox1, oy1, ox2, oy2 = xyxy(other)
+    inter_w = max(0.0, min(tx2, ox2) - max(tx1, ox1))
+    inter_h = max(0.0, min(ty2, oy2) - max(ty1, oy1))
+    target_area = target[3] * target[4]
+    if target_area <= 0:
+        return 0.0
+    return (inter_w * inter_h) / target_area
+
+
+def count_overlaps(labels: list[tuple[int, float, float, float, float]], threshold: float) -> int:
+    count = 0
+    for index, label in enumerate(labels):
+        if any(
+            intersection_over_target_area(label, other) >= threshold
+            for other_index, other in enumerate(labels)
+            if other_index != index
+        ):
+            count += 1
+    return count
 
 
 def parse_yolo_label_line(line: str) -> tuple[int, float, float, float, float]:
@@ -83,6 +120,7 @@ def empty_split_stats() -> dict:
         "class_images": {},
         "scale_counts": {name: 0 for name in SCALE_BINS},
         "thin_count": 0,
+        "overlap_counts": {f"overlap_{threshold}": 0 for threshold in OVERLAP_THRESHOLDS},
         "area_values": [],
         "aspect_ratio_values": [],
     }
@@ -95,6 +133,7 @@ def collect_dataset_stats(config: DatasetConfig) -> dict:
     overall_scale_counts: Counter[str] = Counter({name: 0 for name in SCALE_BINS})
     overall_area_values: list[float] = []
     overall_aspect_ratio_values: list[float] = []
+    overall_overlap_counts: Counter[str] = Counter({f"overlap_{threshold}": 0 for threshold in OVERLAP_THRESHOLDS})
     overall_images = 0
     overall_labels = 0
     overall_missing_labels = 0
@@ -112,6 +151,7 @@ def collect_dataset_stats(config: DatasetConfig) -> dict:
         scale_counts: Counter[str] = Counter({name: 0 for name in SCALE_BINS})
         area_values: list[float] = []
         aspect_ratio_values: list[float] = []
+        overlap_counts: Counter[str] = Counter({f"overlap_{threshold}": 0 for threshold in OVERLAP_THRESHOLDS})
         thin_count = 0
         instance_count = 0
 
@@ -123,6 +163,8 @@ def collect_dataset_stats(config: DatasetConfig) -> dict:
                 missing_labels += 1
             labels = read_label_file(label_path)
             image_classes = set()
+            for threshold in OVERLAP_THRESHOLDS:
+                overlap_counts[f"overlap_{threshold}"] += count_overlaps(labels, threshold)
 
             for cls, _xc, _yc, width, height in labels:
                 area = width * height
@@ -151,6 +193,7 @@ def collect_dataset_stats(config: DatasetConfig) -> dict:
             "class_images": counter_to_string_dict(class_images, len(config.names)),
             "scale_counts": {name: scale_counts[name] for name in SCALE_BINS},
             "thin_count": thin_count,
+            "overlap_counts": {f"overlap_{threshold}": overlap_counts[f"overlap_{threshold}"] for threshold in OVERLAP_THRESHOLDS},
             "area_values": area_values,
             "aspect_ratio_values": aspect_ratio_values,
         }
@@ -163,6 +206,7 @@ def collect_dataset_stats(config: DatasetConfig) -> dict:
         overall_class_instances.update(class_instances)
         overall_class_images.update(class_images)
         overall_scale_counts.update(scale_counts)
+        overall_overlap_counts.update(overlap_counts)
         overall_area_values.extend(area_values)
         overall_aspect_ratio_values.extend(aspect_ratio_values)
 
@@ -173,6 +217,7 @@ def collect_dataset_stats(config: DatasetConfig) -> dict:
         "medium_definition": "0.01 <= area < 0.05",
         "large_definition": "area >= 0.05",
         "thin_definition": "max(w,h)/min(w,h) > 3",
+        "overlap_definition": "max_j Area(b_i intersection b_j) / Area(b_i)",
         "splits": split_stats,
         "overall": {
             "image_count": overall_images,
@@ -183,6 +228,7 @@ def collect_dataset_stats(config: DatasetConfig) -> dict:
             "class_images": counter_to_string_dict(overall_class_images, len(config.names)),
             "scale_counts": {name: overall_scale_counts[name] for name in SCALE_BINS},
             "thin_count": overall_thin,
+            "overlap_counts": {f"overlap_{threshold}": overall_overlap_counts[f"overlap_{threshold}"] for threshold in OVERLAP_THRESHOLDS},
             "area_values": overall_area_values,
             "aspect_ratio_values": overall_aspect_ratio_values,
         },
@@ -261,6 +307,8 @@ def write_outputs(stats: dict, output_dir: Path) -> None:
             "medium": split_stats["scale_counts"]["medium"],
             "large": split_stats["scale_counts"]["large"],
             "thin_count": split_stats["thin_count"],
+            "overlap_0.3": split_stats["overlap_counts"]["overlap_0.3"],
+            "overlap_0.5": split_stats["overlap_counts"]["overlap_0.5"],
         })
     write_csv(output_dir / "split_summary.csv", split_rows, list(split_rows[0].keys()) if split_rows else [])
 

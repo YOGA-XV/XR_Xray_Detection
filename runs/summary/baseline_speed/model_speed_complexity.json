@@ -1,0 +1,40 @@
+﻿[
+    {
+        "model":  "YOLOv8n",
+        "weights":  "G:\\XR_Xray_Detection\\runs\\train_spxray\\yolov8n_spxray\\weights\\best.pt",
+        "layers":  130,
+        "params":  3013188,
+        "params_m":  3.01319,
+        "gradients":  0,
+        "gflops":  8.09571,
+        "preprocess_ms":  0.41943,
+        "inference_ms":  0.82515,
+        "postprocess_ms":  1.01909,
+        "total_ms":  2.26368,
+        "fps_inference_only":  1211.90092,
+        "fps_end_to_end":  441.75918,
+        "precision":  0.944750276149052,
+        "recall":  0.8724966358819463,
+        "map50":  0.928835786765715,
+        "map50_95":  0.7879018614250038
+    },
+    {
+        "model":  "YOLOv8s",
+        "weights":  "G:\\XR_Xray_Detection\\runs\\train_spxray\\yolov8s_spxray\\weights\\best.pt",
+        "layers":  130,
+        "params":  11140244,
+        "params_m":  11.14024,
+        "gradients":  0,
+        "gflops":  28.45862,
+        "preprocess_ms":  0.43208,
+        "inference_ms":  1.80284,
+        "postprocess_ms":  1.06212,
+        "total_ms":  3.29704,
+        "fps_inference_only":  554.67901,
+        "fps_end_to_end":  303.30208,
+        "precision":  0.9457974764370084,
+        "recall":  0.9039865347481922,
+        "map50":  0.9452721375963055,
+        "map50_95":  0.8099777825876124
+    }
+]

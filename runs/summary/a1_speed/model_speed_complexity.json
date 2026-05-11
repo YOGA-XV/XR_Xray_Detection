@@ -1,0 +1,19 @@
+﻿{
+    "model":  "A1-PCN",
+    "weights":  "G:\\XR_Xray_Detection\\runs\\train_stage2\\yolov8n_pcn\\weights\\best.pt",
+    "layers":  130,
+    "params":  3013188,
+    "params_m":  3.01319,
+    "gradients":  0,
+    "gflops":  8.09571,
+    "preprocess_ms":  0.92734,
+    "inference_ms":  0.82801,
+    "postprocess_ms":  1.04568,
+    "total_ms":  2.80103,
+    "fps_inference_only":  1207.7078,
+    "fps_end_to_end":  357.01118,
+    "precision":  0.9433342438272074,
+    "recall":  0.8807416507813252,
+    "map50":  0.9353513413563902,
+    "map50_95":  0.7913427661355057
+}

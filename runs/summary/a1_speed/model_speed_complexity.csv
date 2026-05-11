@@ -1,0 +1,2 @@
+﻿"model","weights","layers","params","params_m","gradients","gflops","preprocess_ms","inference_ms","postprocess_ms","total_ms","fps_inference_only","fps_end_to_end","precision","recall","map50","map50_95"
+"A1-PCN","G:\XR_Xray_Detection\runs\train_stage2\yolov8n_pcn\weights\best.pt","130","3013188","3.01319","0","8.09571","0.92734","0.82801","1.04568","2.80103","1207.7078","357.01118","0.9433342438272074","0.8807416507813252","0.9353513413563902","0.7913427661355057"

@@ -1,0 +1,9 @@
+path: G:/XR_Xray_Detection/datasets/PIDray_yolo
+train: train.txt
+val: easy.txt
+test: test.txt
+easy: easy.txt
+hard: hard.txt
+hidden: hidden.txt
+nc: 12
+names: ['Baton', 'Plier', 'Hammer', 'Powerbank', 'Scissors', 'Wrench', 'Gun', 'Bullet', 'Sprayer', 'HandCuffs', 'Knife', 'Lighter']

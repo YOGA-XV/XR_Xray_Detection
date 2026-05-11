@@ -1,0 +1,13 @@
+model,split,params_m,flops_g,fps,precision,recall,map50,map50_95,notes
+YOLOv8n,overall,,,,,,,,,
+YOLOv8n,easy,,,,,,,,,
+YOLOv8n,hard,,,,,,,,,
+YOLOv8n,hidden,,,,,,,,,
+YOLOv8s,overall,,,,,,,,,
+YOLOv8s,easy,,,,,,,,,
+YOLOv8s,hard,,,,,,,,,
+YOLOv8s,hidden,,,,,,,,,
+XR-Nano,overall,,,,,,,,,
+XR-Nano,easy,,,,,,,,,
+XR-Nano,hard,,,,,,,,,
+XR-Nano,hidden,,,,,,,,,

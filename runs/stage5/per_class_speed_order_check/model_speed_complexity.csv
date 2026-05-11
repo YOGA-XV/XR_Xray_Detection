@@ -1,0 +1,4 @@
+﻿model,weights,layers,params,params_m,gradients,gflops,preprocess_ms,inference_ms,postprocess_ms,total_ms,fps_inference_only,fps_end_to_end,precision,recall,map50,map50_95
+XR-Lite,G:\XR_Xray_Detection\runs\train_stage4\yolov8n_xr_lite\weights\best.pt,180,3438612,3.43861,0,8.65004,0.71615,1.09022,0.70817,2.51454,917.24254,397.68724,0.9517750385909002,0.8775365285130549,0.9297326981402517,0.784645748444119
+XR-Nano,G:\XR_Xray_Detection\runs\train_stage2\yolov8n_pcn_egi\weights\best.pt,130,3013332,3.01333,0,8.23547,0.70438,0.68877,0.71155,2.10471,1451.85473,475.12422,0.9403732353834573,0.887819911655901,0.9385571386076318,0.7923163615702858
+

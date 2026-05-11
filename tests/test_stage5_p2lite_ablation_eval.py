@@ -65,8 +65,8 @@ class Stage5P2LiteAblationEvalTest(unittest.TestCase):
             self.assertAlmostEqual(summary["map50_95"], 0.50)
             self.assertAlmostEqual(summary["ap_small"], 1.0)
             self.assertAlmostEqual(summary["ap_thin"], 1.0)
-            self.assertAlmostEqual(summary["delta_map50_95_vs_A3"], 0.01)
-            self.assertAlmostEqual(summary["delta_ap_small_vs_A3"], 0.5)
+            self.assertAlmostEqual(summary["delta_map50_95_vs_XR_Nano"], 0.01)
+            self.assertAlmostEqual(summary["delta_ap_small_vs_XR_Nano"], 0.5)
             self.assertTrue(output_dir.joinpath("yolov8n_xr_p2lite_final_metrics.json").exists())
             self.assertTrue(output_dir.joinpath("yolov8n_xr_p2lite_ap_small.json").exists())
             self.assertTrue(output_dir.joinpath("yolov8n_xr_p2lite_ap_thin.json").exists())
@@ -85,7 +85,7 @@ class Stage5P2LiteAblationEvalTest(unittest.TestCase):
         try:
             summary_csv.write_text("experiment,map50_95\nother,0.1\n", encoding="utf-8")
 
-            with self.assertRaisesRegex(ValueError, "A3_pcn_egi"):
+            with self.assertRaisesRegex(ValueError, "XR-Nano"):
                 load_reference_row(summary_csv, "A3_pcn_egi")
         finally:
             shutil.rmtree(workspace_tmp, ignore_errors=True)
