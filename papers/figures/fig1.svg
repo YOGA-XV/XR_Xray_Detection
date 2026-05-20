@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfdff"/>
+    </linearGradient>
+    <linearGradient id="softBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="softGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fff9"/>
+      <stop offset="1" stop-color="#ecfff0"/>
+    </linearGradient>
+    <linearGradient id="softPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8ff"/>
+      <stop offset="1" stop-color="#f7fbff"/>
+    </linearGradient>
+    <linearGradient id="xrayBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11202f"/>
+      <stop offset="0.55" stop-color="#071525"/>
+      <stop offset="1" stop-color="#040b14"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-20%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1c2b46" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 18 14" refX="16" refY="7" markerWidth="18" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 18 7 L 0 14 z" fill="#666b73"/>
+    </marker>
+    <marker id="arrowTiny" viewBox="0 0 12 9" refX="10.5" refY="4.5" markerWidth="12" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 12 4.5 L 0 9 z" fill="#666b73"/>
+    </marker>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 48px; font-weight: 800; fill: #06081a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 24px; fill: #63708a; }
+      .stage { font-family: Arial, Helvetica, sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; fill: #111827; }
+      .body { font-family: Arial, Helvetica, sans-serif; font-size: 17px; fill: #111827; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #17233a; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #111827; font-weight: 700; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 15px; fill: #4e5a72; font-weight: 700; }
+      .arrow { stroke: #666b73; stroke-width: 4.2; fill: none; marker-end: url(#arrow); }
+      .arrowTiny { stroke: #666b73; stroke-width: 2.6; fill: none; marker-end: url(#arrowTiny); }
+      .moduleBlue { fill: url(#softBlue); stroke: #0f5ed9; stroke-width: 2; }
+      .modulePurple { fill: url(#softPurple); stroke: #7b2cff; stroke-width: 2; }
+      .moduleGreen { fill: url(#softGreen); stroke: #159536; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1672" height="941" fill="url(#bg)"/>
+
+  <text class="title" x="836" y="62" text-anchor="middle">Overall Framework of EOA-YOLO</text>
+  <text class="subtitle" x="836" y="99" text-anchor="middle">Edge- and Occlusion-Aware Lightweight Detection for Pseudo-color X-ray Security Images</text>
+
+  <g id="training-stage">
+    <rect x="36" y="127" width="1600" height="336" rx="16" fill="#fffefd" stroke="#ffb875" stroke-width="1.4"/>
+    <rect x="48" y="136" width="212" height="44" rx="11" fill="#fffaf5" stroke="#ffb875" stroke-width="1"/>
+    <text class="stage" x="68" y="165" fill="#ff7300">Training Stage</text>
+
+    <g id="train-xray" filter="url(#shadow)">
+      <rect x="56" y="214" width="176" height="130" rx="10" fill="url(#xrayBg)" stroke="#142945" stroke-width="1"/>
+      <rect x="79" y="240" width="34" height="22" rx="5" fill="#d9e5ef" opacity="0.55"/>
+      <ellipse cx="121" cy="278" rx="41" ry="40" fill="#ffad00" opacity="0.88"/>
+      <ellipse cx="166" cy="282" rx="42" ry="34" fill="#19c3c9" opacity="0.72"/>
+      <path d="M96 313 C126 279, 162 261, 201 238" fill="none" stroke="#eef5ff" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+      <path d="M120 294 C139 280, 158 271, 182 263" fill="none" stroke="#b8ffff" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <text class="label" x="144" y="370" text-anchor="middle">Pseudo-color</text>
+    <text class="label" x="144" y="392" text-anchor="middle">X-ray Image</text>
+
+    <line class="arrow" x1="241" y1="282" x2="276" y2="282"/>
+
+    <g id="blt-mix">
+      <rect x="286" y="212" width="180" height="158" rx="13" fill="#fffdfa" stroke="#ff7900" stroke-width="2" stroke-dasharray="9 6"/>
+      <text class="label" x="376" y="263" text-anchor="middle" font-size="19">BLT-Mix</text>
+      <text class="body" x="376" y="289" text-anchor="middle">Occlusion</text>
+      <text class="body" x="376" y="313" text-anchor="middle">Augmentation</text>
+      <rect x="310" y="332" width="132" height="27" rx="13" fill="#fffaf5" stroke="#ff7900" stroke-width="1.4"/>
+      <text class="small" x="376" y="351" text-anchor="middle" fill="#ff7900" font-weight="700">Training only</text>
+    </g>
+
+    <line class="arrow" x1="475" y1="282" x2="511" y2="282"/>
+
+    <g id="train-pcn">
+      <rect class="moduleBlue" x="518" y="211" width="148" height="159" rx="15"/>
+      <text class="label" x="592" y="272" text-anchor="middle">PCN</text>
+      <text class="body" x="592" y="303" text-anchor="middle">Pseudo-color</text>
+      <text class="body" x="592" y="326" text-anchor="middle">Normalization</text>
+    </g>
+
+    <line class="arrow" x1="674" y1="282" x2="708" y2="282"/>
+
+    <g id="train-egi">
+      <rect class="moduleBlue" x="714" y="211" width="148" height="159" rx="15"/>
+      <text class="label" x="788" y="272" text-anchor="middle">EGI</text>
+      <text class="body" x="788" y="303" text-anchor="middle">Scharr Edge</text>
+      <text class="body" x="788" y="326" text-anchor="middle">Extraction</text>
+    </g>
+
+    <line class="arrow" x1="868" y1="282" x2="904" y2="282"/>
+
+    <g id="train-rgb-edge">
+      <rect class="modulePurple" x="910" y="188" width="182" height="203" rx="16"/>
+      <text class="label" x="1001" y="219" text-anchor="middle">RGB + Edge</text>
+      <text class="small" x="1001" y="243" text-anchor="middle">4-channel Input</text>
+      <polygon points="965,262 1054,282 1017,300 930,282" fill="#ffe1dd" stroke="#c43b31" stroke-width="1.5"/>
+      <polygon points="964,284 1055,304 1018,326 930,306" fill="#dff8e5" stroke="#12933c" stroke-width="1.5"/>
+      <polygon points="965,307 1054,327 1017,349 929,329" fill="#dceaff" stroke="#2b67c3" stroke-width="1.5"/>
+      <polygon points="965,330 1054,350 1017,372 929,352" fill="#f3f5f8" stroke="#5a6570" stroke-width="1.5"/>
+      <text class="label" x="1067" y="286" font-size="15">R</text>
+      <text class="label" x="1067" y="309" font-size="15">G</text>
+      <text class="label" x="1067" y="332" font-size="15">B</text>
+      <text class="label" x="1067" y="356" font-size="15">E</text>
+    </g>
+
+    <line class="arrow" x1="1099" y1="282" x2="1134" y2="282"/>
+
+    <g id="train-detector">
+      <rect x="1144" y="212" width="248" height="157" rx="14" fill="#f8fafc" stroke="#111827" stroke-width="1.8"/>
+      <text class="label" x="1268" y="247" text-anchor="middle">YOLOv8n Detector</text>
+      <rect x="1159" y="286" width="68" height="47" rx="7" fill="#e8f2ff" stroke="#bdd1e8"/>
+      <rect x="1248" y="286" width="60" height="47" rx="7" fill="#e9f9ff" stroke="#b7d8e7"/>
+      <rect x="1326" y="286" width="52" height="47" rx="7" fill="#ecf8ef" stroke="#c8dfc9"/>
+      <text class="tiny" x="1193" y="316" text-anchor="middle">Backbone</text>
+      <text class="tiny" x="1278" y="308" text-anchor="middle">PAN</text>
+      <text class="tiny" x="1278" y="326" text-anchor="middle">FPN</text>
+      <text class="tiny" x="1352" y="316" text-anchor="middle">Head</text>
+      <line class="arrowTiny" x1="1228" y1="310" x2="1245" y2="310"/>
+      <line class="arrowTiny" x1="1308" y1="310" x2="1323" y2="310"/>
+    </g>
+
+    <line class="arrow" x1="1401" y1="282" x2="1437" y2="282"/>
+
+    <g id="loss">
+      <rect class="moduleGreen" x="1444" y="212" width="171" height="157" rx="15"/>
+      <text class="label" x="1529.5" y="245" text-anchor="middle">Detection Loss</text>
+      <rect x="1472" y="263" width="118" height="23" rx="8" fill="#ffffff" stroke="#159536" stroke-width="1.4"/>
+      <rect x="1472" y="295" width="118" height="23" rx="8" fill="#ffffff" stroke="#159536" stroke-width="1.4"/>
+      <rect x="1472" y="327" width="118" height="23" rx="8" fill="#ffffff" stroke="#159536" stroke-width="1.4"/>
+      <text class="tiny" x="1531" y="279" text-anchor="middle">Box Loss</text>
+      <text class="tiny" x="1531" y="311" text-anchor="middle">Cls Loss</text>
+      <text class="tiny" x="1531" y="343" text-anchor="middle">DFL Loss</text>
+    </g>
+
+    <text class="note" x="58" y="448">Training pipeline: augmentation → preprocessing → detection loss</text>
+  </g>
+
+  <g id="central-note">
+    <rect x="499" y="482" width="648" height="50" rx="15" fill="#fffdfb" stroke="#ff7900" stroke-width="1.4"/>
+    <circle cx="538" cy="507" r="13" fill="#ff8300"/>
+    <text x="538" y="515" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="800" fill="#ffffff">i</text>
+    <text class="label" x="566" y="513">BLT-Mix is used only during training and introduces no inference cost.</text>
+  </g>
+
+  <g id="inference-stage">
+    <rect x="36" y="535" width="1600" height="321" rx="16" fill="#fdfeff" stroke="#a8cbff" stroke-width="1.4"/>
+    <rect x="48" y="543" width="226" height="44" rx="11" fill="#f8fbff" stroke="#a8cbff" stroke-width="1"/>
+    <text class="stage" x="68" y="572" fill="#0957c9">Inference Stage</text>
+
+    <g id="infer-xray" filter="url(#shadow)">
+      <rect x="56" y="607" width="176" height="130" rx="10" fill="url(#xrayBg)" stroke="#142945" stroke-width="1"/>
+      <rect x="79" y="633" width="34" height="22" rx="5" fill="#d9e5ef" opacity="0.55"/>
+      <ellipse cx="121" cy="671" rx="41" ry="40" fill="#ffad00" opacity="0.88"/>
+      <ellipse cx="166" cy="675" rx="42" ry="34" fill="#19c3c9" opacity="0.72"/>
+      <path d="M96 706 C126 672, 162 654, 201 631" fill="none" stroke="#eef5ff" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+      <path d="M120 687 C139 673, 158 664, 182 656" fill="none" stroke="#b8ffff" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <text class="label" x="144" y="762" text-anchor="middle">Pseudo-color</text>
+    <text class="label" x="144" y="784" text-anchor="middle">X-ray Image</text>
+
+    <line class="arrow" x1="241" y1="682" x2="297" y2="682"/>
+
+    <g id="infer-pcn">
+      <rect class="moduleBlue" x="305" y="607" width="168" height="157" rx="15"/>
+      <text class="label" x="389" y="666" text-anchor="middle">PCN</text>
+      <text class="body" x="389" y="696" text-anchor="middle">Pseudo-color</text>
+      <text class="body" x="389" y="719" text-anchor="middle">Normalization</text>
+    </g>
+
+    <line class="arrow" x1="482" y1="682" x2="537" y2="682"/>
+
+    <g id="infer-egi">
+      <rect class="moduleBlue" x="546" y="607" width="157" height="157" rx="15"/>
+      <text class="label" x="624.5" y="666" text-anchor="middle">EGI</text>
+      <text class="body" x="624.5" y="696" text-anchor="middle">Scharr Edge</text>
+      <text class="body" x="624.5" y="719" text-anchor="middle">Extraction</text>
+    </g>
+
+    <line class="arrow" x1="718" y1="682" x2="774" y2="682"/>
+
+    <g id="infer-rgb-edge">
+      <rect class="modulePurple" x="791" y="585" width="187" height="201" rx="15"/>
+      <text class="label" x="884.5" y="616" text-anchor="middle">RGB + Edge</text>
+      <text class="small" x="884.5" y="640" text-anchor="middle">4-channel Input</text>
+      <polygon points="865,659 942,679 905,697 813,678" fill="#ffe1dd" stroke="#c43b31" stroke-width="1.5"/>
+      <polygon points="865,681 942,701 906,722 813,703" fill="#dff8e5" stroke="#12933c" stroke-width="1.5"/>
+      <polygon points="865,704 942,724 906,746 813,727" fill="#dceaff" stroke="#2b67c3" stroke-width="1.5"/>
+      <polygon points="865,727 942,747 906,769 813,750" fill="#f3f5f8" stroke="#5a6570" stroke-width="1.5"/>
+      <text class="label" x="954" y="682" font-size="15">R</text>
+      <text class="label" x="954" y="706" font-size="15">G</text>
+      <text class="label" x="954" y="729" font-size="15">B</text>
+      <text class="label" x="954" y="753" font-size="15">E</text>
+    </g>
+
+    <line class="arrow" x1="989" y1="682" x2="1052" y2="682"/>
+
+    <g id="infer-detector">
+      <rect x="1059" y="608" width="250" height="156" rx="14" fill="#f8fafc" stroke="#111827" stroke-width="1.8"/>
+      <text class="label" x="1184" y="643" text-anchor="middle">YOLOv8n Detector</text>
+      <rect x="1075" y="682" width="68" height="47" rx="7" fill="#e8f2ff" stroke="#bdd1e8"/>
+      <rect x="1162" y="682" width="60" height="47" rx="7" fill="#e9f9ff" stroke="#b7d8e7"/>
+      <rect x="1240" y="682" width="52" height="47" rx="7" fill="#ecf8ef" stroke="#c8dfc9"/>
+      <text class="tiny" x="1109" y="712" text-anchor="middle">Backbone</text>
+      <text class="tiny" x="1192" y="704" text-anchor="middle">PAN</text>
+      <text class="tiny" x="1192" y="722" text-anchor="middle">FPN</text>
+      <text class="tiny" x="1266" y="712" text-anchor="middle">Head</text>
+      <line class="arrowTiny" x1="1144" y1="706" x2="1159" y2="706"/>
+      <line class="arrowTiny" x1="1222" y1="706" x2="1237" y2="706"/>
+    </g>
+
+    <line class="arrow" x1="1320" y1="682" x2="1383" y2="682"/>
+
+    <g id="results">
+      <rect class="moduleGreen" x="1392" y="608" width="197" height="176" rx="15"/>
+      <text class="label" x="1490.5" y="638" text-anchor="middle">Detection Results</text>
+      <rect x="1408" y="653" width="168" height="117" rx="10" fill="url(#xrayBg)" stroke="#142945" stroke-width="1"/>
+      <rect x="1431" y="670" width="35" height="21" rx="5" fill="#d9e5ef" opacity="0.55"/>
+      <ellipse cx="1470" cy="712" rx="41" ry="38" fill="#ffad00" opacity="0.86"/>
+      <ellipse cx="1514" cy="713" rx="40" ry="32" fill="#19c3c9" opacity="0.72"/>
+      <path d="M1445 742 C1473 709, 1510 691, 1550 668" fill="none" stroke="#eef5ff" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+      <path d="M1465 722 C1488 707, 1508 697, 1533 690" fill="none" stroke="#b8ffff" stroke-width="7" stroke-linecap="round" opacity="0.52"/>
+      <rect x="1442" y="687" width="69" height="56" fill="none" stroke="#ffbf00" stroke-width="3"/>
+      <rect x="1441" y="671" width="75" height="21" rx="3" fill="#ff8a00"/>
+      <text x="1479" y="687" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#ffffff">knife 0.91</text>
+    </g>
+
+    <text class="note" x="58" y="836">Inference pipeline: lightweight preprocessing → detector → predictions</text>
+  </g>
+
+  <text class="note" x="836" y="900" text-anchor="middle">PCN and Scharr-based EGI introduce no learnable parameters; BLT-Mix is removed at inference.</text>
+</svg>

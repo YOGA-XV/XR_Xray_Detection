@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086">
+<defs>
+  <marker id="arrow-black" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
+  <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ff5c00"/></marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ff2d2d"/></marker>
+  <linearGradient id="panelGreen" x1="0" x2="1"><stop offset="0" stop-color="#eefbf6"/><stop offset="1" stop-color="#fff"/></linearGradient>
+  <linearGradient id="soft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f7f7f7"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="1448" height="1086" fill="#fff"/>
+<text x="724" y="28" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" text-anchor="middle" dominant-baseline="middle">XR-Lite Architecture</text>
+<circle cx="64" cy="70" r="17" fill="white" stroke="#00836e" stroke-width="2"/>
+<text x="64" y="71" fill="#00836e" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="middle">1</text>
+<text x="96" y="72" fill="#007264" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="middle">Input Preprocessing</text>
+<rect x="20" y="100" width="286" height="750" rx="14" ry="8" fill="none" stroke="#00836e" stroke-width="1.7" stroke-dasharray="6 5"/>
+<circle cx="392" cy="70" r="17" fill="white" stroke="#0b39ff" stroke-width="2"/>
+<text x="392" y="71" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="middle">2</text>
+<text x="428" y="72" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="middle">YOLOv8n Backbone</text>
+<rect x="350" y="100" width="320" height="746" rx="14" ry="8" fill="none" stroke="#1f63ff" stroke-width="1.7" stroke-dasharray="6 5"/>
+<circle cx="814" cy="70" r="17" fill="white" stroke="#ff5c00" stroke-width="2"/>
+<text x="814" y="71" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="middle">3</text>
+<text x="852" y="72" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="middle">PAN-FPN Neck</text>
+<rect x="697" y="100" width="425" height="746" rx="14" ry="8" fill="none" stroke="#ff5c00" stroke-width="1.7" stroke-dasharray="6 5"/>
+<circle cx="1205" cy="70" r="17" fill="white" stroke="#ff1111" stroke-width="2"/>
+<text x="1205" y="71" fill="#ff1111" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="middle">4</text>
+<text x="1242" y="72" fill="#d80000" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="middle">Detection Head</text>
+<rect x="1164" y="100" width="263" height="746" rx="14" ry="8" fill="none" stroke="#ff1111" stroke-width="1.7" stroke-dasharray="6 5"/>
+<rect x="38" y="116" width="252" height="205" rx="8" ry="8" fill="url(#panelGreen)" stroke="#00836e" stroke-width="1.5"/>
+<text x="164" y="136" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Pseudo-color X-ray Image (RGB)</text>
+<rect x="64" y="156" width="200" height="146" rx="10" ry="8" fill="#fff5eb" stroke="#f4b27a" stroke-width="1"/>
+<g opacity="0.75" stroke-linecap="round" fill="none">
+<path d="M 85.5 273.4 C 105.5 243.4, 155.5 303.4, 205.5 265.4" stroke="#f28d35" stroke-width="1.0"/>
+<path d="M 137.2 204.6 C 157.2 174.6, 207.2 234.6, 257.2 196.6" stroke="#00a84f" stroke-width="2.0"/>
+<path d="M 95.9 220.1 C 115.9 190.1, 165.9 250.1, 215.9 212.1" stroke="#0055c8" stroke-width="3.0"/>
+<path d="M 202.4 252.4 C 222.4 222.4, 272.4 282.4, 322.4 244.4" stroke="#2a9d8f" stroke-width="1.0"/>
+<path d="M 203.9 269.0 C 223.9 239.0, 273.9 299.0, 323.9 261.0" stroke="#f28d35" stroke-width="2.0"/>
+<path d="M 117.0 245.5 C 137.0 215.5, 187.0 275.5, 237.0 237.5" stroke="#00a84f" stroke-width="3.0"/>
+<path d="M 191.2 184.5 C 211.2 154.5, 261.2 214.5, 311.2 176.5" stroke="#0055c8" stroke-width="1.0"/>
+<path d="M 126.4 217.2 C 146.4 187.2, 196.4 247.2, 246.4 209.2" stroke="#2a9d8f" stroke-width="2.0"/>
+<path d="M 136.7 213.7 C 156.7 183.7, 206.7 243.7, 256.7 205.7" stroke="#f28d35" stroke-width="3.0"/>
+<path d="M 86.8 221.2 C 106.8 191.2, 156.8 251.2, 206.8 213.2" stroke="#00a84f" stroke-width="1.0"/>
+<path d="M 134.6 234.6 C 154.6 204.6, 204.6 264.6, 254.6 226.6" stroke="#0055c8" stroke-width="2.0"/>
+<path d="M 106.0 262.7 C 126.0 232.7, 176.0 292.7, 226.0 254.7" stroke="#2a9d8f" stroke-width="3.0"/>
+<path d="M 221.2 217.3 C 241.2 187.3, 291.2 247.3, 341.2 209.3" stroke="#f28d35" stroke-width="1.0"/>
+<path d="M 107.3 251.8 C 127.3 221.8, 177.3 281.8, 227.3 243.8" stroke="#00a84f" stroke-width="2.0"/>
+<path d="M 239.1 224.0 C 259.1 194.0, 309.1 254.0, 359.1 216.0" stroke="#0055c8" stroke-width="3.0"/>
+<path d="M 112.4 264.3 C 132.4 234.3, 182.4 294.3, 232.4 256.3" stroke="#2a9d8f" stroke-width="1.0"/>
+<path d="M 89.2 195.8 C 109.2 165.8, 159.2 225.8, 209.2 187.8" stroke="#f28d35" stroke-width="2.0"/>
+<path d="M 187.9 209.8 C 207.9 179.8, 257.9 239.8, 307.9 201.8" stroke="#00a84f" stroke-width="3.0"/>
+<path d="M 153.5 241.6 C 173.5 211.6, 223.5 271.6, 273.5 233.6" stroke="#0055c8" stroke-width="1.0"/>
+<path d="M 153.1 273.5 C 173.1 243.5, 223.1 303.5, 273.1 265.5" stroke="#2a9d8f" stroke-width="2.0"/>
+<path d="M 227.2 177.8 C 247.2 147.8, 297.2 207.8, 347.2 169.8" stroke="#f28d35" stroke-width="3.0"/>
+<path d="M 83.8 212.9 C 103.8 182.9, 153.8 242.9, 203.8 204.9" stroke="#00a84f" stroke-width="1.0"/>
+<path d="M 217.9 248.1 C 237.9 218.1, 287.9 278.1, 337.9 240.1" stroke="#0055c8" stroke-width="2.0"/>
+<path d="M 110.7 202.2 C 130.7 172.2, 180.7 232.2, 230.7 194.2" stroke="#2a9d8f" stroke-width="3.0"/>
+<path d="M 183.6 227.3 C 203.6 197.3, 253.6 257.3, 303.6 219.3" stroke="#f28d35" stroke-width="1.0"/>
+<path d="M 212.0 250.1 C 232.0 220.1, 282.0 280.1, 332.0 242.1" stroke="#00a84f" stroke-width="2.0"/>
+<path d="M 226.7 188.9 C 246.7 158.9, 296.7 218.9, 346.7 180.9" stroke="#0055c8" stroke-width="3.0"/>
+<path d="M 117.1 268.2 C 137.1 238.2, 187.1 298.2, 237.1 260.2" stroke="#2a9d8f" stroke-width="1.0"/>
+<path d="M 155.5 243.3 C 175.5 213.3, 225.5 273.3, 275.5 235.3" stroke="#f28d35" stroke-width="2.0"/>
+<path d="M 215.5 220.1 C 235.5 190.1, 285.5 250.1, 335.5 212.1" stroke="#00a84f" stroke-width="3.0"/>
+</g>
+<polyline points="160,321 160,354" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="40" y="355" width="242" height="58" rx="6" ry="8" fill="#eefaf6" stroke="#00836e" stroke-width="1.4"/>
+<text x="161" y="376" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" text-anchor="middle" dominant-baseline="middle">PCN</text>
+<text x="161" y="399" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="middle" dominant-baseline="middle">Pseudo-color Normalization</text>
+<polyline points="160,413 160,442" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="40" y="442" width="242" height="212" rx="6" ry="8" fill="#eefaf6" stroke="#00836e" stroke-width="1.4"/>
+<text x="161" y="460" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" text-anchor="middle" dominant-baseline="middle">EGI</text>
+<text x="161" y="482" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="middle" dominant-baseline="middle">Edge-Guided Input</text>
+<text x="161" y="501" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="middle" dominant-baseline="middle">(Scharr Edge Map)</text>
+<rect x="56" y="517" width="210" height="126" rx="4" ry="8" fill="#090909" stroke="#222" stroke-width="1"/>
+<g fill="none" stroke="#cfd6d8" stroke-width="1" opacity="0.9">
+<path d="M 65 526 q 20 -24 52 8"/>
+<path d="M 102 549 q 16 -16 47 10"/>
+<path d="M 139 572 q 12 -8 42 12"/>
+<path d="M 176 595 q 8 0 37 14"/>
+<path d="M 213 618 q 4 8 32 16"/>
+<path d="M 250 536 q 0 -24 27 18"/>
+<path d="M 97 559 q -4 -16 52 20"/>
+<path d="M 134 582 q -8 -8 47 8"/>
+<path d="M 171 605 q 20 0 42 10"/>
+<path d="M 208 628 q 16 8 37 12"/>
+<path d="M 245 546 q 12 -24 32 14"/>
+<path d="M 92 569 q 8 -16 27 16"/>
+<path d="M 129 592 q 4 -8 52 18"/>
+<path d="M 166 615 q 0 0 47 20"/>
+<path d="M 203 533 q -4 8 42 8"/>
+<path d="M 240 556 q -8 -24 37 10"/>
+<path d="M 87 579 q 20 -16 32 12"/>
+<path d="M 124 602 q 16 -8 27 14"/>
+<path d="M 161 625 q 12 0 52 16"/>
+<path d="M 198 543 q 8 8 47 18"/>
+<path d="M 235 566 q 4 -24 42 20"/>
+<path d="M 82 589 q 0 -16 37 8"/>
+<path d="M 119 612 q -4 -8 32 10"/>
+<path d="M 156 530 q -8 0 27 12"/>
+<path d="M 193 553 q 20 8 52 14"/>
+<path d="M 230 576 q 16 -24 47 16"/>
+<path d="M 77 599 q 12 -16 42 18"/>
+<path d="M 114 622 q 8 -8 37 20"/>
+<path d="M 151 540 q 4 0 32 8"/>
+<path d="M 188 563 q 0 8 27 10"/>
+<path d="M 225 586 q -4 -24 52 12"/>
+<path d="M 72 609 q -8 -16 47 14"/>
+<path d="M 109 527 q 20 -8 42 16"/>
+<path d="M 146 550 q 16 0 37 18"/>
+<path d="M 183 573 q 12 8 32 20"/>
+<path d="M 220 596 q 8 -24 27 8"/>
+<path d="M 67 619 q 4 -16 52 10"/>
+<path d="M 104 537 q 0 -8 47 12"/>
+<path d="M 141 560 q -4 0 42 14"/>
+<path d="M 178 583 q -8 8 37 16"/>
+</g>
+<polyline points="160,654 160,680" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="40" y="679" width="242" height="139" rx="6" ry="8" fill="#eefaf6" stroke="#00836e" stroke-width="1.4"/>
+<text x="161" y="706" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" text-anchor="middle" dominant-baseline="middle">4-channel XR Input</text>
+<text x="161" y="730" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" text-anchor="middle" dominant-baseline="middle">[R, G, B, Edge]</text>
+<rect x="54" y="744" width="48" height="64" rx="4" ry="8" fill="#130000" stroke="#aaa" stroke-width="1"/>
+<g opacity="0.9" stroke="#e30000" fill="none" stroke-width="1">
+<path d="M 58 750 q 10 -12 28 4"/>
+<path d="M 67 763 q 5 -8 24 7"/>
+<path d="M 76 776 q 0 -4 20 10"/>
+<path d="M 85 789 q 10 0 16 4"/>
+<path d="M 94 750 q 5 4 28 7"/>
+<path d="M 61 763 q 0 -12 24 10"/>
+<path d="M 70 776 q 10 -8 20 4"/>
+<path d="M 79 789 q 5 -4 16 7"/>
+<path d="M 88 750 q 0 0 28 10"/>
+</g>
+<rect x="109" y="744" width="48" height="64" rx="4" ry="8" fill="#001300" stroke="#aaa" stroke-width="1"/>
+<g opacity="0.9" stroke="#00c628" fill="none" stroke-width="1">
+<path d="M 113 750 q 10 -12 28 4"/>
+<path d="M 122 763 q 5 -8 24 7"/>
+<path d="M 131 776 q 0 -4 20 10"/>
+<path d="M 140 789 q 10 0 16 4"/>
+<path d="M 149 750 q 5 4 28 7"/>
+<path d="M 116 763 q 0 -12 24 10"/>
+<path d="M 125 776 q 10 -8 20 4"/>
+<path d="M 134 789 q 5 -4 16 7"/>
+<path d="M 143 750 q 0 0 28 10"/>
+</g>
+<rect x="164" y="744" width="48" height="64" rx="4" ry="8" fill="#000016" stroke="#aaa" stroke-width="1"/>
+<g opacity="0.9" stroke="#003ef0" fill="none" stroke-width="1">
+<path d="M 168 750 q 10 -12 28 4"/>
+<path d="M 177 763 q 5 -8 24 7"/>
+<path d="M 186 776 q 0 -4 20 10"/>
+<path d="M 195 789 q 10 0 16 4"/>
+<path d="M 204 750 q 5 4 28 7"/>
+<path d="M 171 763 q 0 -12 24 10"/>
+<path d="M 180 776 q 10 -8 20 4"/>
+<path d="M 189 789 q 5 -4 16 7"/>
+<path d="M 198 750 q 0 0 28 10"/>
+</g>
+<rect x="219" y="744" width="48" height="64" rx="4" ry="8" fill="#111" stroke="#aaa" stroke-width="1"/>
+<g opacity="0.9" stroke="#eee" fill="none" stroke-width="1">
+<path d="M 223 750 q 10 -12 28 4"/>
+<path d="M 232 763 q 5 -8 24 7"/>
+<path d="M 241 776 q 0 -4 20 10"/>
+<path d="M 250 789 q 10 0 16 4"/>
+<path d="M 259 750 q 5 4 28 7"/>
+<path d="M 226 763 q 0 -12 24 10"/>
+<path d="M 235 776 q 10 -8 20 4"/>
+<path d="M 244 789 q 5 -4 16 7"/>
+<path d="M 253 750 q 0 0 28 10"/>
+</g>
+<rect x="368" y="122" width="216" height="84" rx="7" ry="8" fill="#f7fbff" stroke="#1f63ff" stroke-width="1.6"/>
+<rect x="368" y="122" width="64.8" height="84" rx="7" ry="8" fill="#eef4ff" stroke="#1f63ff" stroke-width="1.2"/>
+<text x="400.4" y="164" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" text-anchor="middle" dominant-baseline="middle">P1/2</text>
+<rect x="450.08" y="144" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#1f63ff" stroke-width="1.6"/>
+<text x="510.56" y="159" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">Conv 3x3, s=2</text>
+<text x="594" y="166" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">320x320</text>
+<rect x="368" y="246" width="216" height="102" rx="7" ry="8" fill="#f7fbff" stroke="#1f63ff" stroke-width="1.6"/>
+<rect x="368" y="246" width="64.8" height="102" rx="7" ry="8" fill="#eef4ff" stroke="#1f63ff" stroke-width="1.2"/>
+<text x="400.4" y="297" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" text-anchor="middle" dominant-baseline="middle">P2/4</text>
+<rect x="450.08" y="268" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#1f63ff" stroke-width="1.6"/>
+<text x="510.56" y="283" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">Conv 3x3, s=2</text>
+<rect x="450.08" y="306" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#1f63ff" stroke-width="1.6"/>
+<text x="510.56" y="321" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">C2f x3</text>
+<text x="594" y="292" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">160x160</text>
+<rect x="368" y="390" width="216" height="102" rx="7" ry="8" fill="#f7fbff" stroke="#1f63ff" stroke-width="1.6"/>
+<rect x="368" y="390" width="64.8" height="102" rx="7" ry="8" fill="#eef4ff" stroke="#1f63ff" stroke-width="1.2"/>
+<text x="400.4" y="441" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" text-anchor="middle" dominant-baseline="middle">P3/8</text>
+<rect x="450.08" y="412" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#1f63ff" stroke-width="1.6"/>
+<text x="510.56" y="427" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">Conv 3x3, s=2</text>
+<rect x="450.08" y="450" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#1f63ff" stroke-width="1.6"/>
+<text x="510.56" y="465" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">C2f x6</text>
+<text x="602" y="438" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">80x80</text>
+<rect x="368" y="532" width="216" height="106" rx="7" ry="8" fill="#f7fbff" stroke="#1f63ff" stroke-width="1.6"/>
+<rect x="368" y="532" width="64.8" height="106" rx="7" ry="8" fill="#eef4ff" stroke="#1f63ff" stroke-width="1.2"/>
+<text x="400.4" y="585" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" text-anchor="middle" dominant-baseline="middle">P4/16</text>
+<rect x="450.08" y="554" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="510.56" y="569" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">Conv 3x3, s=2</text>
+<rect x="450.08" y="592" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="510.56" y="607" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">C2fEMALite x6</text>
+<text x="602" y="580" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">40x40</text>
+<rect x="368" y="680" width="216" height="138" rx="7" ry="8" fill="#f7fbff" stroke="#1f63ff" stroke-width="1.6"/>
+<rect x="368" y="680" width="64.8" height="138" rx="7" ry="8" fill="#eef4ff" stroke="#1f63ff" stroke-width="1.2"/>
+<text x="400.4" y="749" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" text-anchor="middle" dominant-baseline="middle">P5/32</text>
+<rect x="450.08" y="702" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="510.56" y="717" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">Conv 3x3, s=2</text>
+<rect x="450.08" y="740" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="510.56" y="755" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">C2f x3</text>
+<rect x="450.08" y="778" width="120.96000000000001" height="30" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="510.56" y="793" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">SPPFAIFILite</text>
+<text x="602" y="748" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">20x20</text>
+<polyline points="505,206 505,246" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<polyline points="505,348 505,390" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<polyline points="505,492 505,532" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<polyline points="505,638 505,680" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<polyline points="280,748 318,748 318,166 368,166" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="328" y="600" width="67" height="32" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="361.5" y="616" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" text-anchor="middle" dominant-baseline="middle">EMA-Lite</text>
+<line x1="395" y1="616" x2="476" y2="616" stroke="#7d31e8" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+<rect x="323" y="775" width="74" height="48" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="360" y="791.2" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" dominant-baseline="middle">SPPF +</text>
+<text x="360" y="806.8000000000001" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" dominant-baseline="middle">AIFI-Lite</text>
+<line x1="397" y1="799" x2="476" y2="786" stroke="#7d31e8" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+<text x="728" y="126" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="start" dominant-baseline="middle">P5/32</text>
+<text x="728" y="148" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">(AIFI-enhanced)</text>
+<polyline points="802,136 880,136 880,150" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="150" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="166" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Upsample x2</text>
+<polyline points="875,182 875,206" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="206" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="222" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Concat</text>
+<polyline points="875,238 875,274" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="274" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="290" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">C2f x3</text>
+<polyline points="875,306 875,326" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="326" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="342" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Upsample x2</text>
+<polyline points="875,358 875,382" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="382" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="398" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Concat</text>
+<polyline points="875,414 875,434" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="434" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="450" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">C2f x3</text>
+<polyline points="875,466 875,488" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="488" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="504" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Conv 3x3, s=2</text>
+<polyline points="875,520 875,548" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="548" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="564" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Concat</text>
+<polyline points="875,580 875,594" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="594" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="875" y="610" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">C2fEMALite x3</text>
+<polyline points="875,626 875,652" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="652" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="668" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Conv 3x3, s=2</text>
+<polyline points="875,684 875,708" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="708" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#ff5c00" stroke-width="1.6"/>
+<text x="875" y="724" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Concat</text>
+<polyline points="875,740 875,762" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<rect x="810" y="762" width="130" height="32" rx="6" ry="8" fill="#fff" stroke="#7d31e8" stroke-width="1.6"/>
+<text x="875" y="778" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">C2fEMALite x3</text>
+<polyline points="584,580 718,580 718,556 810,556" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<text x="727" y="254" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="start" dominant-baseline="middle">P4/16</text>
+<text x="714" y="276" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">(Enhanced)</text>
+<polyline points="684,225 810,225" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<text x="727" y="400" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="start" dominant-baseline="middle">P3/8</text>
+<polyline points="602,400 810,400" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<text x="706" y="730" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="start" dominant-baseline="middle">P5/32</text>
+<text x="704" y="750" fill="#0b39ff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="start" dominant-baseline="middle">(AIFI-enhanced)</text>
+<polyline points="584,748 810,748" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
+<polyline points="940,290 974,290" fill="none" stroke="#ff5c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<text x="980" y="286" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="start" dominant-baseline="middle">(P4 Top-down</text>
+<text x="980" y="302" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="start" dominant-baseline="middle">Intermediate)</text>
+<polyline points="940,444 1012,444" fill="none" stroke="#ff5c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<text x="1026" y="436" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">Neck P3/8</text>
+<text x="1026" y="453" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">(Top-down Output)</text>
+<polyline points="940,610 1010,610" fill="none" stroke="#ff5c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<text x="1017" y="610" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">Neck P4/16</text>
+<text x="1017" y="626" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">(EMA-Lite Refined</text>
+<text x="1017" y="642" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">Output)</text>
+<polyline points="940,780 1010,780" fill="none" stroke="#ff5c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<text x="1017" y="780" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">Neck P5/32</text>
+<text x="1017" y="796" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">(EMA-Lite Refined</text>
+<text x="1017" y="812" fill="#ff5c00" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">Output)</text>
+<rect x="1224" y="213" width="164" height="156" rx="7" ry="8" fill="#fffafa" stroke="#ff2d2d" stroke-width="1.5"/>
+<text x="1306" y="245" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="middle">Detect: P3/8</text>
+<text x="1306" y="271" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="middle">(Small)</text>
+<path d="M 1254 289 L 1309 289 L 1297 313 L 1242 313 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<path d="M 1262 298 L 1317 298 L 1305 322 L 1250 322 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<path d="M 1270 307 L 1325 307 L 1313 331 L 1258 331 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<rect x="1338" y="289" width="38" height="58" rx="0" ry="8" fill="white" stroke="#555" stroke-width="1.3"/>
+<line x1="1350.7" y1="289" x2="1350.7" y2="347" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1363.4" y1="289" x2="1363.4" y2="347" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="303.5" x2="1376" y2="303.5" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="318" x2="1376" y2="318" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="332.5" x2="1376" y2="332.5" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<circle cx="1344" cy="296" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="310.5" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="325" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="339.5" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="296" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="310.5" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="325" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="339.5" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="296" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="310.5" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="325" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="339.5" r="2" fill="#ff2d2d"/>
+<rect x="1224" y="472" width="164" height="156" rx="7" ry="8" fill="#fffafa" stroke="#ff2d2d" stroke-width="1.5"/>
+<text x="1306" y="504" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="middle">Detect: P4/16</text>
+<text x="1306" y="530" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="middle">(Medium)</text>
+<path d="M 1254 548 L 1309 548 L 1297 572 L 1242 572 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<path d="M 1262 557 L 1317 557 L 1305 581 L 1250 581 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<path d="M 1270 566 L 1325 566 L 1313 590 L 1258 590 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<rect x="1338" y="548" width="38" height="58" rx="0" ry="8" fill="white" stroke="#555" stroke-width="1.3"/>
+<line x1="1350.7" y1="548" x2="1350.7" y2="606" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1363.4" y1="548" x2="1363.4" y2="606" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="562.5" x2="1376" y2="562.5" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="577" x2="1376" y2="577" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="591.5" x2="1376" y2="591.5" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<circle cx="1344" cy="555" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="569.5" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="584" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="598.5" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="555" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="569.5" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="584" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="598.5" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="555" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="569.5" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="584" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="598.5" r="2" fill="#ff2d2d"/>
+<rect x="1224" y="701" width="164" height="156" rx="7" ry="8" fill="#fffafa" stroke="#ff2d2d" stroke-width="1.5"/>
+<text x="1306" y="733" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="middle">Detect: P5/32</text>
+<text x="1306" y="759" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="middle">(Large)</text>
+<path d="M 1254 777 L 1309 777 L 1297 801 L 1242 801 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<path d="M 1262 786 L 1317 786 L 1305 810 L 1250 810 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<path d="M 1270 795 L 1325 795 L 1313 819 L 1258 819 Z" fill="#ff2d2d" opacity="0.17" stroke="#ff2d2d" stroke-width="1.5"/>
+<rect x="1338" y="777" width="38" height="58" rx="0" ry="8" fill="white" stroke="#555" stroke-width="1.3"/>
+<line x1="1350.7" y1="777" x2="1350.7" y2="835" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1363.4" y1="777" x2="1363.4" y2="835" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="791.5" x2="1376" y2="791.5" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="806" x2="1376" y2="806" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<line x1="1338" y1="820.5" x2="1376" y2="820.5" stroke="#555" stroke-width="1" stroke-linecap="round"/>
+<circle cx="1344" cy="784" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="798.5" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="813" r="2" fill="#ff2d2d"/>
+<circle cx="1344" cy="827.5" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="784" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="798.5" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="813" r="2" fill="#ff2d2d"/>
+<circle cx="1356.7" cy="827.5" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="784" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="798.5" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="813" r="2" fill="#ff2d2d"/>
+<circle cx="1369.4" cy="827.5" r="2" fill="#ff2d2d"/>
+<polyline points="1012,444 1148,444 1148,292 1224,292" fill="none" stroke="#ff5c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<polyline points="1010,610 1148,610 1148,551 1224,551" fill="none" stroke="#ff5c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<polyline points="1010,780 1224,780" fill="none" stroke="#ff5c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<rect x="20" y="870" width="286" height="106" rx="5" ry="8" fill="white" stroke="#00836e" stroke-width="1.4"/>
+<rect x="32" y="878" width="24" height="28" rx="3" ry="8" fill="#bfe9df" stroke="#00836e" stroke-width="1.3"/>
+<text x="70" y="899" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">Input channels = 4</text>
+<text x="70" y="929" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">Preprocessing = PCN + EGI</text>
+<rect x="48" y="999" width="192" height="54" rx="6" ry="8" fill="white" stroke="#7d31e8" stroke-width="1.5"/>
+<text x="144" y="1017" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" dominant-baseline="middle">Purple: XR-Lite</text>
+<text x="144" y="1037" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" dominant-baseline="middle">Enhancement Modules</text>
+<rect x="350" y="860" width="314" height="116" rx="6" ry="8" fill="white" stroke="#1f63ff" stroke-width="1.4"/>
+<rect x="357" y="868" width="23" height="24" rx="3" ry="8" fill="#78a8ff" stroke="#1f63ff" stroke-width="1.2"/>
+<text x="390" y="878" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">Backbone: YOLOv8n-XR-Lite</text>
+<text x="390" y="895" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">Input: 4-channel (R, G, B, Edge)</text>
+<text x="390" y="912" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">Feature scales (640x640 input):</text>
+<text x="390" y="929" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">P1/2: 320x320, P2/4: 160x160,</text>
+<text x="390" y="946" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">P3/8: 80x80, P4/16: 40x40, P5/32: 20x20</text>
+<rect x="698" y="870" width="425" height="106" rx="6" ry="8" fill="white" stroke="#ff5c00" stroke-width="1.4"/>
+<rect x="709" y="878" width="24" height="28" rx="3" ry="8" fill="#ffe5d5" stroke="#ff5c00" stroke-width="1.2"/>
+<text x="744" y="894" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="middle">Neck:  PAN-FPN (XR-Lite)</text>
+<text x="744" y="920" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="middle">Top-down (FPN) + Bottom-up (PAN)</text>
+<text x="744" y="946" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="middle">Fusion: Upsample, Conv s=2, Concat, C2f / C2fEMALite</text>
+<rect x="1166" y="870" width="260" height="106" rx="6" ry="8" fill="white" stroke="#ff2d2d" stroke-width="1.4"/>
+<rect x="1176" y="878" width="24" height="28" rx="3" ry="8" fill="#ff7e86" stroke="#ff2d2d" stroke-width="1.2"/>
+<text x="1210" y="894" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="middle">Detection Head (YOLOv8n)</text>
+<text x="1210" y="919" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="middle">3-scale predictions:</text>
+<text x="1210" y="944" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="middle">P3/8, P4/16, P5/32</text>
+<rect x="329" y="999" width="808" height="60" rx="7" ry="8" fill="white" stroke="#666" stroke-width="1.4"/>
+<text x="733" y="1030" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="middle">XR-Lite  =  PCN  +  EGI  +  EMA-Lite  +  AIFI-Lite  +  YOLOv8n</text>
+</svg>
