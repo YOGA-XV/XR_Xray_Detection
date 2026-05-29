@@ -1,0 +1,40 @@
+[
+  {
+    "model": "XR-Plus-Original-EMA",
+    "weights": "G:\\XR_Xray_Detection\\runs\\train_plus_original_ema_candidates\\xr_plus_original_ema_img768_lr0005_cm20\\weights\\best.pt",
+    "layers": 167,
+    "params": 2896128,
+    "params_m": 2.89613,
+    "gradients": 0,
+    "gflops": 16.87533,
+    "preprocess_ms": 0.89113,
+    "inference_ms": 2.07826,
+    "postprocess_ms": 0.66491,
+    "total_ms": 3.63429,
+    "fps_inference_only": 481.17229,
+    "fps_end_to_end": 275.15654,
+    "precision": 0.9397843149981026,
+    "recall": 0.8689228981752334,
+    "map50": 0.9199467036361334,
+    "map50_95": 0.7440243743856333
+  },
+  {
+    "model": "XR-Plus-Original-EMA-AIFI-Lite",
+    "weights": "G:\\XR_Xray_Detection\\runs\\train_plus_original_ema_candidates\\xr_plus_original_ema_aifi_lite_img768_lr0005_cm20\\weights\\best.pt",
+    "layers": 184,
+    "params": 3216192,
+    "params_m": 3.21619,
+    "gradients": 0,
+    "gflops": 17.24758,
+    "preprocess_ms": 0.80847,
+    "inference_ms": 1.75108,
+    "postprocess_ms": 0.64654,
+    "total_ms": 3.20609,
+    "fps_inference_only": 571.07529,
+    "fps_end_to_end": 311.90635,
+    "precision": 0.9390142145159751,
+    "recall": 0.8781242561153136,
+    "map50": 0.9227596153047292,
+    "map50_95": 0.7531115975253548
+  }
+]

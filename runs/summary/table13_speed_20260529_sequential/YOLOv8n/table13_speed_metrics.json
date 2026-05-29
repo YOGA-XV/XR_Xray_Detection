@@ -1,0 +1,30 @@
+[
+  {
+    "model": "YOLOv8n",
+    "weights": "runs\\train_spxray\\yolov8n_spxray\\weights\\best.pt",
+    "onnx": "runs\\train_spxray\\yolov8n_spxray\\weights\\best.onnx",
+    "input_size": 640,
+    "input_channels": 3,
+    "layers": 130,
+    "params": 3013188,
+    "params_m": 3.01319,
+    "gflops": 8.20598,
+    "pytorch_fp32_ms": 8.85671,
+    "pytorch_fp32_ms_std": 0.10777,
+    "pytorch_fp32_fps": 112.90872,
+    "onnx_ms": 4.09128,
+    "onnx_ms_std": 0.11019,
+    "onnx_fps": 244.42222,
+    "tensorrt_fp16_ms": 2.12205,
+    "tensorrt_fp16_ms_std": 0.20453,
+    "tensorrt_fp16_fps": 471.24317,
+    "latency_ms": 8.85671,
+    "gpu_memory_gb": 0.03444,
+    "model_size_mb": 5.97471,
+    "onnx_size_mb": 11.70535,
+    "onnx_provider": "CUDAExecutionProvider",
+    "onnx_error": "",
+    "tensorrt_provider": "TensorrtExecutionProvider",
+    "tensorrt_error": ""
+  }
+]

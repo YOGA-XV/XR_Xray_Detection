@@ -1,0 +1,2 @@
+model,weights,layers,params,params_m,gradients,gflops,preprocess_ms,inference_ms,postprocess_ms,total_ms,fps_inference_only,fps_end_to_end,precision,recall,map50,map50_95
+EMA-Lite,G:\XR_Xray_Detection\runs\train_stage4\yolov8n_xr_ema\weights\best.pt,163,3118548,3.11855,0,8.39153,1.52869,1.75911,2.11182,5.39962,568.4695,185.19811,0.9483546858947048,0.8769155408924921,0.9307811137038607,0.7872373999445524

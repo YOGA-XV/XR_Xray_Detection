@@ -1,0 +1,13 @@
+{
+  "model": "XR-Plus-Original-EMA-AIFI-Lite",
+  "weights": "runs\\train_plus_original_ema_candidates\\xr_plus_original_ema_aifi_lite_img768_lr0005_cm20\\weights\\best.pt",
+  "ap_small": 0.6693653204779616,
+  "recall_small": 0.8037383177570093,
+  "small_gt_count": 107,
+  "ap_thin": 0.8493532827663072,
+  "recall_thin": 0.9328621908127208,
+  "thin_gt_count": 283,
+  "ap_overlap": 0.8256225285039163,
+  "recall_overlap": 0.9327956989247311,
+  "overlap_gt_count": 372
+}

@@ -1,0 +1,10 @@
+{
+  "model": "nano_original_ema_768",
+  "weights": "runs\\train_attention_ablation_finetune_768\\nano_original_ema_lr0005_img768_cm20\\weights\\best.pt",
+  "ap_small": 0.6892145005512729,
+  "recall_small": 0.8317757009345794,
+  "small_gt_count": 107,
+  "ap_thin": 0.8516077184779755,
+  "recall_thin": 0.9399293286219081,
+  "thin_gt_count": 283
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "model": "EMA-Lite",
+    "weights": "G:\\XR_Xray_Detection\\runs\\train_stage4\\yolov8n_xr_ema\\weights\\best.pt",
+    "layers": 163,
+    "params": 3118548,
+    "params_m": 3.11855,
+    "gradients": 0,
+    "gflops": 8.39153,
+    "preprocess_ms": 1.52869,
+    "inference_ms": 1.75911,
+    "postprocess_ms": 2.11182,
+    "total_ms": 5.39962,
+    "fps_inference_only": 568.4695,
+    "fps_end_to_end": 185.19811,
+    "precision": 0.9483546858947048,
+    "recall": 0.8769155408924921,
+    "map50": 0.9307811137038607,
+    "map50_95": 0.7872373999445524
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "model": "nano_original_ema_768",
+    "weights": "G:\\XR_Xray_Detection\\runs\\train_attention_ablation_finetune_768\\nano_original_ema_lr0005_img768_cm20\\weights\\best.pt",
+    "layers": 151,
+    "params": 3028948,
+    "params_m": 3.02895,
+    "gradients": 0,
+    "gflops": 12.16396,
+    "preprocess_ms": 0.79797,
+    "inference_ms": 0.97583,
+    "postprocess_ms": 0.64208,
+    "total_ms": 2.41587,
+    "fps_inference_only": 1024.76942,
+    "fps_end_to_end": 413.92926,
+    "precision": 0.9270922293377964,
+    "recall": 0.8879755135275614,
+    "map50": 0.9218388054259009,
+    "map50_95": 0.7782811764550088
+  },
+  {
+    "model": "nano_original_ema_aifi_lite_768",
+    "weights": "G:\\XR_Xray_Detection\\runs\\train_attention_ablation_finetune_768\\nano_original_ema_aifi_lite_lr0005_img768_cm20\\weights\\best.pt",
+    "layers": 168,
+    "params": 3349012,
+    "params_m": 3.34901,
+    "gradients": 0,
+    "gflops": 12.53621,
+    "preprocess_ms": 0.79556,
+    "inference_ms": 1.04084,
+    "postprocess_ms": 0.63979,
+    "total_ms": 2.47618,
+    "fps_inference_only": 960.7657,
+    "fps_end_to_end": 403.8472,
+    "precision": 0.9489719864183385,
+    "recall": 0.8798819415117672,
+    "map50": 0.9309189866785461,
+    "map50_95": 0.7820266605529549
+  }
+]

@@ -1,0 +1,3 @@
+model,weights,ap_small,recall_small,small_gt_count,ap_thin,recall_thin,thin_gt_count
+nano_original_ema_768,runs\train_attention_ablation_finetune_768\nano_original_ema_lr0005_img768_cm20\weights\best.pt,0.6892145005512729,0.8317757009345794,107,0.8516077184779755,0.9399293286219081,283
+nano_original_ema_aifi_lite_768,runs\train_attention_ablation_finetune_768\nano_original_ema_aifi_lite_lr0005_img768_cm20\weights\best.pt,0.7108270963884498,0.8317757009345794,107,0.8557272363359678,0.9363957597173145,283
